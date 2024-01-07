@@ -5,6 +5,7 @@ if [ ! -L /root/speed-camera/config.py ]; then
     echo "config.py not symlinked ..."
     if [ ! -f /root/speed-camera/config/config.py ]; then
         echo "config.py does not exist in the docker volume, let's move it there and create a symlink"
+        wget -O /root/speed-camera/config.py -q --show-progress https://raw.github.com/pageauc/speed-camera/master/config.py
         mv /root/speed-camera/config.py /root/speed-camera/config/config.py
         ln -fs /root/speed-camera/config/config.py /root/speed-camera/config.py
     else
