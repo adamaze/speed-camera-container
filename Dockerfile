@@ -10,8 +10,7 @@ RUN apt-get install -y tzdata
 RUN ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime
 RUN dpkg-reconfigure --frontend noninteractive tzdata
 
-# speed camera dependencies
-RUN apt-get install -yq python curl wget sudo python-numpy python3-opencv dos2unix python-pil sqlite3 python-matplotlib python3-matplotlib libgl1-mesa-dri pandoc
+# speed camera install
 
 RUN curl -L https://raw.github.com/pageauc/rpi-speed-camera/master/speed-install.sh | bash
 
