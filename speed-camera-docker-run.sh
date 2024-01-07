@@ -22,7 +22,7 @@ fi
 cd /root/speed-camera/
 
 echo "Starting Web Server..."
-python /root/speed-camera/webserver.py start >> /root/speed-camera/webserver.log 2>&1 &
+python3 /root/speed-camera/webserver.py start >> /root/speed-camera/webserver.log 2>&1 &
 
 echo "Starting Speed Camera..."
 python3 /root/speed-camera/speed-cam.py start
